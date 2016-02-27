@@ -10,6 +10,7 @@ echo ${arr[*]}
 
 if [ "$ZIPPED" = "True" ]
 	then
+		gunzip -c ${arr[*]}
 		gunzip -c ${arr[*]} | ./secondtrie
 
 else
@@ -18,6 +19,7 @@ else
         echo "Processing $f"
         sed -i '' -e '$a\' $f
     done
+    cat ${arr[*]}
     cat ${arr[*]} | ./secondtrie
 fi
 rm tmp.cfg
