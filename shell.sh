@@ -24,6 +24,7 @@ else
         echo "Processing $f"
         sed -i '' -e '$a\' $f
     done
+    cat ${arr[*]}
     cat ${arr[*]} | ./secondtrie
 fi
 rm tmp.cfg
